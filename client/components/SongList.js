@@ -38,6 +38,16 @@ class SongList extends Component {
   }
 }
 
-// Bond query to component
-// Returns function thats called by SongList
-export default graphql(query)(SongList);
+const mutation = gql`
+  mutation DeleteSong($id: ID) {
+    deleteSong(id: $id) {
+      id
+    }
+  }
+`;
+
+// Bond mutuation AND query to component
+// Multiple call required because only 1 parameter
+export default graphql(mutation)(
+  graphql(query)(SongList)
+);
