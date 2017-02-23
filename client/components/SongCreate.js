@@ -7,11 +7,17 @@ class SongCreate extends Component {
     this.state = { title: ''};
   }
 
+  onSubmit(event) {
+    event.preventDefault();
+
+
+  }
+
   render() {
     return (
       <div>
         <h4>Create a new Song</h4>
-        <form>
+        <form onSubmit={this.onSubmit.bind(this)}>
           <label>Song Title:</label>
           <input
             onChange={event => this.setState({ title: event.target.value })}
@@ -22,5 +28,12 @@ class SongCreate extends Component {
     );
   }
 }
+
+// Define query for component
+// const query = gql`
+//   mutation {
+//     addSong(title: )
+//   }
+// `;
 
 export default SongCreate;
