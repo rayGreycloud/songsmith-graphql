@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 // Help bond query to component
 import { graphql } from 'react-apollo';
 import { Link } from 'react-router';
+import query from '../queries/fetchSongs';
 
 class SongList extends Component {
   // Create li for each song
@@ -31,21 +32,11 @@ class SongList extends Component {
           to="/songs/new"
           className="btn-floating btn-large red right">
           <i className="material-icons">add</i>
-        </Link> 
+        </Link>
       </div>
     );
   }
 }
-
-// Define query for component
-const query = gql`
-  {
-    songs {
-      id
-      title
-    }
-  }
-`;
 
 // Bond query to component
 // Returns function thats called by SongList
