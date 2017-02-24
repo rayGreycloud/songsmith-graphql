@@ -6,8 +6,12 @@ import getSong from '../queries/getSong';
 
 class SongDetail extends Component {
   render() {
+    console.log(this.props);
     return (
-      <div><h3>Song Detail</h3></div>
+      <div>
+        <h3>Song Detail</h3>
+
+      </div>
     );
   }
 }
