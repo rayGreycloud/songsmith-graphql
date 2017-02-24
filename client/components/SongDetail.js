@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
+import query from '../queries/getSong';
+
 
 class SongDetail extends Component {
   render() {
@@ -8,4 +12,4 @@ class SongDetail extends Component {
   }
 }
 
-export default SongDetail;
+export default graphql(query)(SongDetail);
