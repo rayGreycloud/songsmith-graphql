@@ -12,7 +12,12 @@ class LyricCreate extends Component {
   onSubmit(event) {
     event.preventDefault();
 
-
+    this.props.mutate({
+      variables: {
+        content: this.state.content,
+        songId: this.props.songId
+      }
+    })
   }
 
   render() {
