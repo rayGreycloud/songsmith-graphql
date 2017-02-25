@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 
 class LyricCreate extends Component {
   constructor(props) {
@@ -7,9 +9,15 @@ class LyricCreate extends Component {
     this.state = { content: '' };
   }
 
+  onSubmit(event) {
+    event.preventDefault();
+
+
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.onSubmit.bind(this)}>
         <label>Add New Lyric</label>
         <input
           value={this.state.content}
@@ -20,4 +28,15 @@ class LyricCreate extends Component {
   }
 }
 
-export default LyricCreate;
+const mutation = gql`
+  mutation AddLyricToSong($content: String, $songId: ID) {
+    addLyricToSong(content: $content, songId: $songId) {
+      id
+      lyrics {
+        content
+      }
+    }
+  }
+`;
+
+export default graphql(mutation)(LyricCreate);
