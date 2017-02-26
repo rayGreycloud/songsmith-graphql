@@ -6,3 +6,8 @@
 .material-icons {
   cursor: pointer;
 }
+
+.md-18 {
+  /* Added because material-icons css not working*/
+  font-size: 18px !important;
+}
