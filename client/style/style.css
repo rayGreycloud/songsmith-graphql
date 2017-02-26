@@ -5,9 +5,15 @@
 
 .material-icons {
   cursor: pointer;
+  margin-right: 5px;
 }
 
 .md-18 {
   /* Added because material-icons css not working*/
   font-size: 18px !important;
+}
+
+.vote-box {
+  display: flex;
+  align-items: center;
 }
