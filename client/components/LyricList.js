@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 
 class LyricList extends Component {
   onLike(id) {
-    console.log(id);
+    this.props.mutate({ variables: { id } });
   }
 
   renderLyrics() {
