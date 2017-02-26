@@ -10,7 +10,10 @@ import SongCreate from './components/SongCreate';
 import SongDetail from './components/SongDetail';
 import './style/style.css';
 
-const client = new ApolloClient({});
+const client = new ApolloClient({
+  // Configure apollo to use record IDs in store
+  dataIdFromObject: o => o.id
+});
 
 const Root = () => {
   return (
